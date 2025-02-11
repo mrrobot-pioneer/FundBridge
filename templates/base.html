@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}FundBridge{% endblock %}</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Boxicons for icons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+    <!-- Page-Specific Styles -->
+    {% block extra_css %}{% endblock %}
+
+    <script src="{% static 'js/script.js' %}" defer></script>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">FundBridge</a></h1>
+      </div>
+
+      <!-- Hamburger Menu Icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
+
+      <nav>
+        <ul id="nav-list">
+          <li><a href="{% url 'create_fundraiser' %}">Start Fundraising</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %} {% block content %} {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Logo and About -->
+          <div class="footer-section">
+            <h2 class="heading">FundBridge</h2>
+            <p>
+              Connecting students in need with generous donors worldwide.
+              Together, we create impact.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="heading">Quick Links</h3>
+            <ul>
+              <li>
+                <a href="{% url 'create_fundraiser' %}">Start Fundraising</a>
+              </li>
+              <li><a href="#">Donate</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Links -->
+          <div class="footer-section">
+            <h3 class="heading">Legal</h3>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="footer-section">
+            <h3 class="heading">Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 FundBridge. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

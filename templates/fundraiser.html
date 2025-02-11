@@ -1,0 +1,42 @@
+{% extends "base.html" %} {%load static%} {%block title%}Create
+Fundraiser{%endblock%} {%block extra_css %}
+<link rel="stylesheet" href="{% static 'css/fundraiser.css' %}" />
+{% endblock %} {%block content%}
+
+<div class="fundraiser-container">
+  <h1>Start Your Fundraiser</h1>
+  <p>Select a category and fill in the details to get started.</p>
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="id_category">Select Category</label>
+      {{ form.category }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_title">Fundraiser Title</label>
+      {{ form.title }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_description">Description</label>
+      {{ form.description }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_image">Upload an Image</label>
+      {{ form.image }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_target_amount">Target Amount (Ksh)</label>
+      {{ form.target_amount }}
+    </div>
+
+    <button type="submit" class="btn-primary">Start Fundraiser</button>
+  </form>
+</div>
+
+{% endblock %}

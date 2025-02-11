@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% load static %} {%load humanize%} {%block title %}
+{{fundraiser.title}} {%endblock %} {%block extra_css %}
+<link rel="stylesheet" href="{% static 'css/fundraiser-details.css' %}" />
+{% endblock %} {%block content%}
+<section class="fundraiser-details">
+  <div class="container">
+    <div class="fundraiser-hero">
+      <img src="{{ fundraiser.image.url }}" alt="{{ fundraiser.title }}" />
+      <div class="hero-overlay">
+        <h3>{{ fundraiser.title }}</h3>
+      </div>
+    </div>
+
+    <div class="fundraiser-content">
+      <!-- Left Section -->
+      <div class="fundraiser-info">
+        <h2>About This Fundraiser</h2>
+        <p>{{ fundraiser.description }}</p>
+
+        <div class="progress-container">
+          <span
+            >Ksh {{ fundraiser.raised_amount|intcomma }} raised of
+            <strong>Ksh {{fundraiser.target_amount|intcomma}}</strong>
+          </span>
+          <div class="progress-bar">
+            <div
+              class="progress"
+              style="width: {{ fundraiser.progress_percentage }}%"
+            ></div>
+          </div>
+        </div>
+
+        <h3>Updates</h3>
+        <p>No recent updates yet.</p>
+      </div>
+
+      <!-- Right Section (Donate Box) -->
+      <div class="donate-box">
+        <h3>Make a Donation</h3>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input
+            type="number"
+            name="amount"
+            placeholder="Enter amount"
+            required
+          />
+          <button type="submit" class="btn-primary">
+            <i class="bx bx-dollar"></i> Donate Now
+          </button>
+        </form>
+
+        <p class="small-text">
+          Your donation helps {{ fundraiser.title }} reach its goal!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
