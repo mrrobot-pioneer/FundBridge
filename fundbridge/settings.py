@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-g-gu9rj(khllox4a$z*=!dm+n-y*eb(%$y-2(q-(&e&a7z@g_q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["fundbridge.onrender.com"]
-
+ALLOWED_HOSTS = ["fundbridge.onrender.com", "127.0.0.1"]
 
 # Application definition
 

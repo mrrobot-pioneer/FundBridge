@@ -43,8 +43,12 @@
         <ul id="nav-list">
           <li><a href="{% url 'create_fundraiser' %}">Start Fundraising</a></li>
           <li><a href="#">Donate</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>

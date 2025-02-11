@@ -1,0 +1,48 @@
+.auth-container {
+  background: var(--white-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 15px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+}
+
+.auth-container .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.link {
+  margin-top: 15px;
+}
+
+.link a {
+  color: var(--secondary-color);
+}
