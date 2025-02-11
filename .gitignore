@@ -13,17 +13,11 @@ env/
 
 # Secret settings
 .env
-*.sqlite3
-db.sqlite3
 config.json
 
 # Django migrations
 */migrations/*.py
 */migrations/*.pyc
-
-# Static and media files
-staticfiles/
-media/
 
 # Logs and debugging
 *.log
