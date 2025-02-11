@@ -1,0 +1,277 @@
+/* Define color variables */
+:root {
+  --primary-color: #2e8b57; /* Green */
+  --secondary-color: #fab150;
+  --background-color: #f0f8ff; /* Light blue */
+  --text-color: #333; /* Dark grey */
+  --white-color: #ffffff;
+}
+
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+.main {
+  padding: 80px 0 50px 0;
+}
+
+/* Header & Navigation */
+header {
+  background-color: var(--white-color);
+  color: var(--text-color);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+  border-bottom: 4px solid var(--primary-color);
+}
+
+/* Logo */
+header .logo h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header .logo a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Menu */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  margin-left: auto;
+}
+
+/* buttons */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn-primary i {
+  font-size: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #267947;
+}
+
+.btn-secondary {
+  background-color: #000;
+  color: var(--secondary-color);
+}
+
+/* headings */
+.heading {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+/* alerts */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Success message */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Error message */
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Warning message */
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+/* Footer Section */
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  text-align: left;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-grid p {
+  color: var(--white-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Footer Sections */
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: var(--white-color);
+}
+
+/* Footer Links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+/* Copyright */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  color: var(--white-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+}
